@@ -5,9 +5,9 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const Login = () => {
 
     const { logIn, googleSignIn } = useContext(AuthContext);
-    // const navigate = useNavigate();
-    // const location = useLocation();
-    // const from = location.state?.from?.pathname || '/';
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event => {
         event.preventDefault();
@@ -21,7 +21,7 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser);
             form.reset();
-            // navigate(from ,{replace: true})
+            navigate(from ,{replace: true})
         })
         .catch(error=>{
             console.error(error);
