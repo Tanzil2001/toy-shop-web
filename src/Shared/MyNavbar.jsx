@@ -43,6 +43,11 @@ const MyNavbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                <div>
+                    {
+                        user? <img title={user?.displayName} className="w-16 h-16 rounded-full mr-2" src={user?.photoURL} alt="" />: ""
+                    }
+                </div>
                 {
                     user? <button onClick={handleSignOut} className="btn btn-outline btn-primary">LogOut</button> : <Link to="/login"><button className="btn btn-outline btn-primary">Login</button></Link>
                 }
