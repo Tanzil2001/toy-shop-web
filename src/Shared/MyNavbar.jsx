@@ -16,8 +16,8 @@ const MyNavbar = () => {
         <li className="mr-3"><Link to='/'>Home</Link></li>
         <li><Link to="/alltoys">All Toys</Link></li>
         {
-            user ? <><li><Link>My Toys</Link></li>
-            <li><Link>Add A Toy</Link></li></> : ""
+            user ? <><li><Link to="/myToys">My Toys</Link></li>
+            <li><Link to="/addAToy">Add A Toy</Link></li></> : ""
         }
         <li><Link>Blog</Link></li>
     </>
