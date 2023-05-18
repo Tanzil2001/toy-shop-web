@@ -12,6 +12,7 @@ const AllToys = () => {
                     <thead>
                         <tr>
                             <th></th>
+                            <th>Seller</th>
                             <th>Toy Name</th>
                             <th>Sub Category</th>
                             <th>Price</th>
