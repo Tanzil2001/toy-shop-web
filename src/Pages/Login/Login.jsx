@@ -27,6 +27,18 @@ const Login = () => {
             console.error(error);
         })
     }
+
+        const handleGooleLogIn = ()=>{
+            googleSignIn()
+            .then(result =>{
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error=>{
+                console.error(error);
+            })
+        }    
+
     return (
         <div className="p-5 bg-slate-300 border border-2">
             <form onSubmit={handleLogin} className="grid grid-cols-1 ">
@@ -35,6 +47,9 @@ const Login = () => {
                 <input type="submit" value="Login" />
                 <Link to="/register"> Register</Link>
             </form>
+            <div>
+                <button onClick={handleGooleLogIn}> Google Log in</button>
+            </div>
         </div>
     );
 };
