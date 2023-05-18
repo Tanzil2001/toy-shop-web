@@ -1,14 +1,11 @@
-import { useContext } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const ShowAllToys = ({ toy }) => {
-    const {user} = useContext(AuthContext);
-    const { name, sub_category, price, available_quantity } = toy;
+    const { name, sub_category, price, available_quantity, seller_name } = toy;
     return (    
             <tr>
                 <th>#</th>
-                <td>{user?.displayName}</td>
+                <td>{seller_name}</td>
                 <td>{name}</td>
                 <td>{sub_category}</td>
                 <td>$ {price}</td>
