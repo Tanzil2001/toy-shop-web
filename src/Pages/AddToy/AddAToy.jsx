@@ -9,17 +9,17 @@ const AddAToy = () => {
     const handlePost = (event) => {
         event.preventDefault();
         const form = event.target;
-        const toyName = form.toyName.value;
-        const sellerName = form.name.value;
-        const toyPhoto = form.toyPhoto.value;
-        const sellerEmail = form.email.value;
-        const subCategory = form.subCategory.value;
+        const name = form.toyName.value;
+        const seller_name = form.name.value;
+        const picture_url = form.toyPhoto.value;
+        const seller_email = form.email.value;
+        const sub_category = form.subCategory.value;
         const price = form.price.value;
         const rating = form.rating.value;
-        const quantity = form.quantity.value;
-        const details = form.details.value;
+        const available_quantity = form.quantity.value;
+        const description = form.details.value;
 
-        const addToy = { toyName, sellerName, sellerEmail, toyPhoto, subCategory, price, rating, quantity, details };
+        const addToy = { name, seller_name, seller_email, picture_url, sub_category, price, rating, available_quantity, description };
         console.log(addToy);
 
         fetch('http://localhost:5000/addtoys', {
