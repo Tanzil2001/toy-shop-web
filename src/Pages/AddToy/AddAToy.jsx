@@ -34,9 +34,7 @@ const AddAToy = () => {
             console.log(data);
             if(data.insertedId){
                 Swal.fire(
-                    'The Internet?',
-                    'That thing is still around?',
-                    'question'
+                    'Successfully add a Toy'
                   )
                   
             }

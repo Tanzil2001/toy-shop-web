@@ -57,7 +57,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/categoryDetails/:id',
-                element: <CategoryDetails></CategoryDetails>,
+                element: <PrivetRoute><CategoryDetails></CategoryDetails></PrivetRoute>,
                 loader: ({params}) => fetch(`https://assignment-11-server-teal.vercel.app/alltoys/${params.id}`)
             }
         ]

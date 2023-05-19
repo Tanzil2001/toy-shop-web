@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ShowMyToys = ({ toys, handleDelete }) => {
 
-    const {_id, picture_url, seller_email, seller_name, sub_category, price, available_quantity, description } = toys;
+    const {_id, picture_url, seller_name, sub_category, price, available_quantity, description } = toys;
     
     return (
         <tr>
@@ -10,9 +10,6 @@ const ShowMyToys = ({ toys, handleDelete }) => {
                 <div className="mask w-24 h-24">
                     <img src={picture_url} />
                 </div>
-            </td>
-            <td>
-                {seller_email}
             </td>
             <td>{seller_name}</td>
             <td>$ {price}</td>

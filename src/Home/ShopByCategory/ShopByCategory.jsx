@@ -20,9 +20,9 @@ const ShopByCategory = () => {
     return (
         <div>
       <h1 className="text-3xl text-center mt-5 p-5">Shop By Category</h1>
-      <div className="tab-container text-center">
+      <div className=" text-center">
         <div className="text-center w-100 m-auto">
-          <div className="tabs d-flex justify-content-center align-items-center">
+          <div className="md:flex justify-center items-center gap-5">
             <div
               onClick={() => handleTabChange("Marvel")}
               className={`btn btn-primary ${

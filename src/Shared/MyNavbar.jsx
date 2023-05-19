@@ -32,9 +32,6 @@ const MyNavbar = () => {
                         {navsLinks}
                     </ul>
                 </div>
-                {/* <Link to="/" className="btn btn-ghost normal-case text-xl">
-                <img src={logo} alt="" />
-            </Link> */}
                 <p>ogo shuncho</p>
             </div>
             <div className="navbar-center hidden lg:flex">

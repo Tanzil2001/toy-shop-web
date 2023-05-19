@@ -17,8 +17,6 @@ const MyToys = () => {
             })
     }, [url])
 
-    // https://assignment-11-server-teal.vercel.app/alltoys
-
     const handleDelete =(id)=>{
         Swal.fire({
             title: 'Are you sure?',
@@ -39,9 +37,7 @@ const MyToys = () => {
                     const remainingToys = myToys.filter(toys => toys._id !== id)
                     setMyToys(remainingToys)
                     Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
+                        'Deleted Toy Successfully '
                       )
                 }
              })
@@ -55,7 +51,6 @@ const MyToys = () => {
                     <thead>
                         <tr>
                             <th>Image</th>
-                            <th>Seller Email</th>
                             <th>Seller Name</th>
                             <th>Price</th>
                             <th>Sub Category</th>
