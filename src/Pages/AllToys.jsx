@@ -15,14 +15,12 @@ const AllToys = () => {
         })
     },[])
     console.log(toysData);
-    // https://assignment-11-server-teal.vercel.app/alltoys
 
 
     const handleSearch = () => {
         fetch(`https://assignment-11-server-teal.vercel.app/toySearchByName/${search}`)
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             setToysData(data);
           });
       };

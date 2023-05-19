@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-
+    const [error, setError] = useState('') ;
     const { registerUser } = useContext(AuthContext)
 
     const handleRegister = event => {
@@ -16,15 +16,21 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, photo, email, password);
 
+        form.reset();
+        if(password.length < 6){
+            return setError('Password should be at least 6 charecter')
+        }
+
         registerUser(email, password)
             .then(result => {
                 const registerdUser = result.user;
                 console.log(registerdUser);
                 updateUserInfo(registerdUser, name, photo)
                 form.reset();
+                setError('')
             })
             .catch(error => {
-                console.log(error);
+                setError(error.message);
             })
 
     }
@@ -32,7 +38,7 @@ const Register = () => {
         updateProfile(user, { displayName: name, photoURL: photo })
             .then(() => { })
             .catch((error) => {
-                console.log(error);
+                setError(error.message);
             });
     };
     return (
@@ -45,6 +51,7 @@ const Register = () => {
                 <input type="submit" value="Register" />
                 <Link to="/login">Login </Link>
             </form>
+            <p>{error}</p>
         </div>
     );
 };

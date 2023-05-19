@@ -50,7 +50,7 @@ const ShopByCategory = () => {
           </div>
         </div>
       </div>
-      <div className="jobs-container mt-5 row">
+      <div className=" mt-5  md:flex gap-5 justify-center items-center">
         {
             category.map(toy =><ShowShopeByCategory 
             key={toy._id}

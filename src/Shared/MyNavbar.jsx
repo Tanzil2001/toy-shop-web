@@ -19,7 +19,7 @@ const MyNavbar = () => {
             user ? <><li><Link to="/myToys">My Toys</Link></li>
             <li><Link to="/addAToy">Add A Toy</Link></li></> : ""
         }
-        <li><Link>Blog</Link></li>
+        <li><Link to="/blog">Blog</Link></li>
     </>
     return (
         <div className="navbar bg-base-100 h-28">
