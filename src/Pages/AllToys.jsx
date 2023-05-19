@@ -8,7 +8,7 @@ const AllToys = () => {
     const [toysData, setToysData] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/alltoys')
+        fetch('https://assignment-11-server-teal.vercel.app/alltoys')
         .then(res => res.json())
         .then(data => {
             setToysData(data)
@@ -19,7 +19,7 @@ const AllToys = () => {
 
 
     const handleSearch = () => {
-        fetch(`http://localhost:5000/toySearchByName/${search}`)
+        fetch(`https://assignment-11-server-teal.vercel.app/toySearchByName/${search}`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

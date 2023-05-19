@@ -22,7 +22,7 @@ const AddAToy = () => {
 
         const addToy = { name, seller_name, seller_email, picture_url, sub_category, price, rating, available_quantity, description };
 
-        fetch('http://localhost:5000/addtoys', {
+        fetch('https://assignment-11-server-teal.vercel.app/addtoys', {
             method: 'POST',
             headers:{
                 'content-type':'application/json'

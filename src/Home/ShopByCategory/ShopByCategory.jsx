@@ -3,10 +3,10 @@ import ShowShopeByCategory from '../../Pages/Show/ShowShopByCategory/ShowShopeBy
 
 const ShopByCategory = () => {
     const [category, setCategory] = useState([])
-    const [activeTab, setActiveTab] = useState(' ');
+    const [activeTab, setActiveTab] = useState('Marvel');
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/alltoys/${activeTab}`)
+        fetch(`https://assignment-11-server-teal.vercel.app/category?cat=${activeTab}`)
         .then(res => res.json())
         .then(data => {
             setCategory(data);
