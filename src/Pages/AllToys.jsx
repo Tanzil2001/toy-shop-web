@@ -1,30 +1,40 @@
-import { useLoaderData } from "react-router-dom";
+
 import ShowAllToys from "./Show/ShowAllToys";
+import { useEffect, useState } from "react";
 // import { useState } from "react";
 
 const AllToys = () => {
-    // const [toys , setToys] = useState([]);
-    // const [search, setSearch] = useState('')
-    const toysData = useLoaderData();
-    console.log(toysData);
+    const [search, setSearch] = useState('')
+    const [toysData, setToysData] = useState([]);
 
-    // const handleSearch = () => {
-    //     fetch(`http://localhost:5000/getJobsByText/${searchText}`)
-    //       .then((res) => res.json())
-    //       .then((data) => {
-    //         console.log(data);
-    //         setToys(data);
-    //       });
-    //   };
+    useEffect(()=>{
+        fetch('http://localhost:5000/alltoys')
+        .then(res => res.json())
+        .then(data => {
+            setToysData(data)
+        })
+    },[])
+    console.log(toysData);
+    // https://assignment-11-server-teal.vercel.app/alltoys
+
+
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/toySearchByName/${search}`)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setToysData(data);
+          });
+      };
     return (
         <div className="my-10">
             <div className="search-box p-2 text-center">
                 <input
                     className="bg-slate-200 w-1/2 p-3 mb-8 rounded-l-lg"
-                    onChange={(event) => (event.target.value)}
+                    onChange={(event) => setSearch(event.target.value)}
                     type="text"
                 />{" "}
-                <button className="bg-primary p-3 px-5 text-white font-bold rounded-r-lg">Search</button>
+                <button onClick={handleSearch} className="bg-primary p-3 px-5 text-white font-bold rounded-r-lg">Search</button>
             </div>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">

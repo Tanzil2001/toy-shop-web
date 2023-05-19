@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import ShowMyToys from "../Show/ShowMyToys/ShowMyToys";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
 
@@ -15,6 +16,38 @@ const MyToys = () => {
                 setMyToys(data);
             })
     }, [url])
+
+    // https://assignment-11-server-teal.vercel.app/alltoys
+
+    const handleDelete =(id)=>{
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+             fetch(`https://assignment-11-server-teal.vercel.app/alltoys/${id}`,{
+                method:'DELETE'
+             })
+             .then(res => res.json())
+             .then(data =>{
+                if(data.deletedCount > 0){
+                    const remainingToys = myToys.filter(toys => toys._id !== id)
+                    setMyToys(remainingToys)
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                      )
+                }
+             })
+            }
+          })
+    }
     return (
         <div>
             <div className="overflow-x-auto w-full my-8">
@@ -37,6 +70,7 @@ const MyToys = () => {
                             myToys.map(toys => <ShowMyToys
                             key={toys._id}
                             toys={toys}
+                            handleDelete={handleDelete}
                             ></ShowMyToys>)
                         }
                     </tbody>

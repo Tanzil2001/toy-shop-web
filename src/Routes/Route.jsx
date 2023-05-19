@@ -21,7 +21,6 @@ const router = createBrowserRouter([
             {
                 path: 'alltoys',
                 element: <AllToys></AllToys>,
-                loader: ()=>fetch('http://localhost:5000/alltoys')
             },
             {
                 path: '/login',
@@ -40,8 +39,9 @@ const router = createBrowserRouter([
                 element: <MyToys></MyToys>
             },
             {
-                path: '/update',
-                element: <Update></Update>
+                path: '/update/:id',
+                element: <Update></Update>,
+                loader: ({params}) => fetch(`https://assignment-11-server-teal.vercel.app/alltoys/${params.id}`)
             }
         ]
     }
