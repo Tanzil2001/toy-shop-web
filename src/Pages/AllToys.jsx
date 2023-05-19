@@ -1,4 +1,5 @@
 
+import { Helmet } from "react-helmet";
 import ShowAllToys from "./Show/ShowAllToys";
 import { useEffect, useState } from "react";
 // import { useState } from "react";
@@ -26,6 +27,9 @@ const AllToys = () => {
       };
     return (
         <div className="my-10">
+            <Helmet>
+                <title>All Toys</title>
+            </Helmet>
             <div className="search-box p-2 text-center">
                 <input
                     className="bg-slate-200 w-1/2 p-3 mb-8 rounded-l-lg"

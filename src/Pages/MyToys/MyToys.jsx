@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import ShowMyToys from "../Show/ShowMyToys/ShowMyToys";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const MyToys = () => {
 
@@ -46,6 +47,9 @@ const MyToys = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>My Toys</title>
+            </Helmet>
             <div className="overflow-x-auto w-full my-8">
                 <table className="table w-full">
                     <thead>

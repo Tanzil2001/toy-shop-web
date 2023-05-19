@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet";
 
 
 const Blog = () => {
     return (
         <div className="border border-2 p-5 my-10 rounded-md shadow-xl">
             <div >
+            <Helmet>
+                <title>Toy Blog</title>
+            </Helmet>
                 <p className="text-2xl font-bold mb-2">What is an access token and refresh token? How do they work and where should we store them on the client-side?</p>
                 <p>You can store the access token and refresh token in the server-side session. The application can use web sessions to communicate with the server. The token is then available for any requests originating from server-side code</p>
             </div>

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const AddAToy = () => {
 
@@ -41,9 +42,11 @@ const AddAToy = () => {
         })
     }
 
-    // https://assignment-11-server-teal.vercel.app
     return (
         <div className="my-8 ">
+            <Helmet>
+                <title>Add A Toy</title>
+            </Helmet>
             <form onSubmit={handlePost} className="grid grid-cols-2 gap-5 ml-32">
                 <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="text" name="toyName" placeholder="Toy Name" />
                 <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="url" name="toyPhoto" placeholder="Toy Photo" />

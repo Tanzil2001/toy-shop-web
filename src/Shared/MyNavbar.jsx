@@ -32,7 +32,7 @@ const MyNavbar = () => {
                         {navsLinks}
                     </ul>
                 </div>
-                <p>ogo shuncho</p>
+                <p>Toys World</p>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
