@@ -41,23 +41,32 @@ const AddAToy = () => {
             }
         })
     }
+    const glassStyle = {
+        background: 'linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3))',
+        backdropFilter: 'blur(10px)',
+        borderRadius: '10px',
+        padding: '20px'
+      };
 
     return (
-        <div className="my-8 ">
+        <div className="my-8 bg-red-600 container mx-auto p-10">
             <Helmet>
                 <title>Toy Stars-Add A Toy</title>
             </Helmet>
-            <form onSubmit={handlePost} className="grid grid-cols-2 gap-5 ml-32">
-                <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="text" name="toyName" placeholder="Toy Name" />
-                <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="url" name="toyPhoto" placeholder="Toy Photo" />
-                <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="text" value={user?.displayName} name="name" placeholder="Seller Name" />
-                <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="email" value={user?.email} name="email" placeholder="Seller Email" />
-                <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="text" name="subCategory" placeholder="Sub Category" />
-                <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="number" name="price" placeholder="Price" />
-                <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="number" name="rating" placeholder="Rating" />
-                <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="number" name="quantity" placeholder="Available quantity" />
-                <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="text" name="details" placeholder="Detail description" />
-                <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="submit" value="Add Toy" />
+            <p className="text-center font-serif text-white mb-10 text-4xl font-bold">Add A Toy To Your shop </p>
+            <form style={glassStyle} onSubmit={handlePost} className="md:grid space-y-3 md:space-y-0 md:grid-cols-2 gap-5 w-2/3 mx-auto">
+                <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="text" name="toyName" placeholder="Toy Name" />
+                <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="url" name="toyPhoto" placeholder="Toy Photo" />
+                <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="text" value={user?.displayName} name="name" placeholder="Seller Name" />
+                <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="email" value={user?.email} name="email" placeholder="Seller Email" />
+                <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="text" name="subCategory" placeholder="Sub Category" />
+                <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="number" name="price" placeholder="Price" />
+                <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="number" name="rating" placeholder="Rating" />
+                <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="number" name="quantity" placeholder="Available quantity" />
+                <input className="input shadow-xl input-bordered input-error h-40 w-full mx-auto" type="text" name="details" placeholder="Detail description" />
+                <div className=" ">
+                <input className="btn-outline w-full h-20 p-3 text-lg font-bold rounded-lg bg-red-600 " type="submit" value="Add Toy" />
+                </div>
             </form>
         </div>
     );

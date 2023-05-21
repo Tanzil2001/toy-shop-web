@@ -50,7 +50,8 @@ const MyToys = () => {
             <Helmet>
                 <title>Toy Stars-My Toys</title>
             </Helmet>
-            <div className="overflow-x-auto w-full my-8 container mx-auto">
+            <div className="bg-red-600 p-5 overflow-x-auto w-full my-8 container mx-auto">
+                <p className="text-center mb-8 text-4xl font-bold font-serif text-white">All Of My Toys Are Here</p>
                 <table className="table w-full">
                     <thead>
                         <tr>
