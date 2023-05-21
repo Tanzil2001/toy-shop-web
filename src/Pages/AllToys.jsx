@@ -33,7 +33,7 @@ const AllToys = () => {
       };
     return (
         <div className="my-10 container mx-auto bg-red-600 p-5">
-            <p className="text-center font-bold font-serif text-4xl text-white mb-5">All Toys Of All People</p>
+            <p className="text-center font-bold font-serif text-4xl text-white mb-5npm">All Toys Of All People</p>
             <Helmet>
                 <title> Toy Stars-All Toys</title>
             </Helmet>
