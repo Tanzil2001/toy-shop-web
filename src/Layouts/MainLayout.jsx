@@ -4,7 +4,7 @@ import MyNavbar from "../Shared/MyNavbar";
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <MyNavbar></MyNavbar>
             <Outlet></Outlet>
             <Footer></Footer>
