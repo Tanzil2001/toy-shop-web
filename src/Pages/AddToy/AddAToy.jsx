@@ -25,28 +25,28 @@ const AddAToy = () => {
 
         fetch('https://assignment-11-server-teal.vercel.app/addtoys', {
             method: 'POST',
-            headers:{
-                'content-type':'application/json'
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(addToy)
+            body: JSON.stringify(addToy)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                Swal.fire(
-                    'Successfully add a Toy'
-                  )
-                  
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire(
+                        'Successfully add a Toy'
+                    )
+
+                }
+            })
     }
     const glassStyle = {
         background: 'linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3))',
         backdropFilter: 'blur(10px)',
         borderRadius: '10px',
         padding: '20px'
-      };
+    };
 
     return (
         <div className="my-8 bg-red-600 container mx-auto p-10">
@@ -59,13 +59,17 @@ const AddAToy = () => {
                 <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="url" name="toyPhoto" placeholder="Toy Photo" />
                 <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="text" value={user?.displayName} name="name" placeholder="Seller Name" />
                 <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="email" value={user?.email} name="email" placeholder="Seller Email" />
-                <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="text" name="subCategory" placeholder="Sub Category" />
+                <select name="subCategory" className="select select-secondary w-full max-w-xl">
+                    <option value='Marvel'>Marvel</option>
+                    <option value='Avengers'>Avengers</option>
+                    <option value='Star Wars'>Star Wars</option>
+                </select>
                 <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="number" name="price" placeholder="Price" />
                 <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="number" name="rating" placeholder="Rating" />
                 <input className="input shadow-xl input-bordered input-error w-full max-w-md mx-auto" type="number" name="quantity" placeholder="Available quantity" />
                 <input className="input shadow-xl input-bordered input-error h-40 w-full mx-auto" type="text" name="details" placeholder="Detail description" />
                 <div className=" ">
-                <input className="btn-outline w-full h-20 p-3 text-lg font-bold rounded-lg bg-red-600 " type="submit" value="Add Toy" />
+                    <input className="btn-outline w-full h-20 p-3 text-lg font-bold rounded-lg bg-red-600 " type="submit" value="Add Toy" />
                 </div>
             </form>
         </div>
