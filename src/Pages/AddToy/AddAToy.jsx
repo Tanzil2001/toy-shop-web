@@ -45,7 +45,7 @@ const AddAToy = () => {
     return (
         <div className="my-8 ">
             <Helmet>
-                <title>Add A Toy</title>
+                <title>Toy Stars-Add A Toy</title>
             </Helmet>
             <form onSubmit={handlePost} className="grid grid-cols-2 gap-5 ml-32">
                 <input className="p-3 w-2/3 bg-slate-200 rounded-md" type="text" name="toyName" placeholder="Toy Name" />

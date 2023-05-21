@@ -27,9 +27,7 @@ const Update = () => {
             console.log(data);
             if(data.modifiedCount > 0){
                 Swal.fire(
-                    'The Internet?',
-                    'That thing is still around?',
-                    'question'
+                    'Successfully Updated Toy '
                   )
             }
         })

@@ -26,9 +26,9 @@ const AllToys = () => {
           });
       };
     return (
-        <div className="my-10">
+        <div className="my-10 container mx-auto">
             <Helmet>
-                <title>All Toys</title>
+                <title> Toy Stars-All Toys</title>
             </Helmet>
             <div className="search-box p-2 text-center">
                 <input

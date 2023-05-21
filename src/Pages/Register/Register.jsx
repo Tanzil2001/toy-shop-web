@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const [error, setError] = useState('') ;
@@ -41,15 +42,24 @@ const Register = () => {
                 setError(error.message);
             });
     };
+    const glassStyle = {
+        background: 'linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3))',
+        backdropFilter: 'blur(10px)',
+        borderRadius: '10px',
+        padding: '20px'
+      };
     return (
-        <div className="p-5 bg-slate-300 border border-2">
-            <form onSubmit={handleRegister} className="grid grid-cols-1 ">
-                <input className="w-1/2 mb-3 p-2 mx-auto" type="text" name="name" placeholder="Name" required />
-                <input className="w-1/2 mb-3 p-2 mx-auto" type="email" name="email" placeholder="Email" required />
-                <input className="w-1/2 mb-3 p-2 mx-auto" type="text" name="photo" placeholder="Photo URL" required />
-                <input className="w-1/2 mb-3 p-2 mx-auto" type="password" name="password" placeholder="Password" required />
-                <input type="submit" value="Register" />
-                <Link to="/login">Login </Link>
+        <div className="p-5 bg-red-600 container mx-auto border-2">
+            <Helmet>
+                <title>Toy Stars-Register</title>
+            </Helmet>
+            <form style={glassStyle} onSubmit={handleRegister} className="grid grid-cols-1 rounded-lg bg-red-600 md:w-1/4 p-5 mx-auto">
+                <input className="my-5 shadow-xl input input-bordered input-error w-full max-w-xs mx-auto" type="text" name="name" placeholder="Name" required />
+                <input className="my-5 shadow-xl input input-bordered input-error w-full max-w-xs mx-auto" type="email" name="email" placeholder="Email" required />
+                <input className="my-5 shadow-xl input input-bordered input-error w-full max-w-xs mx-auto" type="text" name="photo" placeholder="Photo URL" required />
+                <input className="my-5 shadow-xl input input-bordered input-error w-full max-w-xs mx-auto" type="password" name="password" placeholder="Password" required />
+                <input className="btn btn-outline bg-red-600 text-white font-bold" type="submit" value="Register" />
+                <p className="mt-5 text-center"><span className="text-lg font-bold text-white">Already Registered ? Please</span><Link to="/login"><span className="text-xl font-bold text-black">Login</span> </Link></p>
             </form>
             <p>{error}</p>
         </div>

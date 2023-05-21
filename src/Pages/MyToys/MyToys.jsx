@@ -48,14 +48,14 @@ const MyToys = () => {
     return (
         <div>
             <Helmet>
-                <title>My Toys</title>
+                <title>Toy Stars-My Toys</title>
             </Helmet>
-            <div className="overflow-x-auto w-full my-8">
+            <div className="overflow-x-auto w-full my-8 container mx-auto">
                 <table className="table w-full">
                     <thead>
                         <tr>
                             <th>Image</th>
-                            <th>Seller Name</th>
+                            <th>Toy Name</th>
                             <th>Price</th>
                             <th>Sub Category</th>
                             <th>Quantity</th>
